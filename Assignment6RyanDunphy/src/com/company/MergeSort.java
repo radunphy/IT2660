@@ -18,7 +18,7 @@ public class MergeSort {
     }
     public static void merge(int array[], int left, int mid, int right){
         int leftValue = mid;
-        int rightValue = mid;
+        int rightValue = mid + 1;
         int low = left;
         while ((low <= leftValue) && (rightValue <= right)){
             if (array[leftValue] < array[rightValue]){
@@ -30,9 +30,9 @@ public class MergeSort {
                     array[i+1] = array[i];
                 }
                 array[leftValue] = temp;
-                leftValue++;
                 left++;
-                right++;
+                leftValue++;
+                rightValue++;
             }
         }
     }
